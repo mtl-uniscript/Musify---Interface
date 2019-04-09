@@ -1,1 +1,2 @@
-# Musify---Interface
+# Musify
+Music Streaming website
