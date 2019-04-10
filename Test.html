@@ -3,6 +3,9 @@
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style media="screen">
 
 /*Color and ratio of the body*/
@@ -66,6 +69,10 @@ border-color:black;
 border: 2px solid #black;
 border-radius: 5px;
 z-index: 1;
+
+
+
+
 }
 
 /*Action while hover on SearchButton*/
@@ -80,7 +87,7 @@ z-index: 1;
 height: 40px;
 width: 100px;
 position: relative;
-margin-top: 0.3%;
+margin-top: 0.2%;
 margin-left: 93.30%;
 border: 1px solid: black;
 border-radius: 5px;
@@ -179,15 +186,22 @@ color: white;
 
       .LoginNav {
         width: : 100%;
-        height: 0;
+        height: 0%;
         position: fixed;
         z-index: 1;
-        top: 0;
+        top: 42px;
         left: 0;
         background-color: #111;
         overflow-x: hidden;
         transition: 0.5s;
 
+      }
+
+      #CloseXTop {
+      position : absolute;
+      margin-left: 95%;
+      margin-top: 0.3%;
+      font-size: 40px;
       }
 
 
@@ -204,6 +218,13 @@ color: white;
        transition: 0.5s;
        padding-top: 60px;
 
+     }
+
+     #CloseXBot {
+     position : absolute;
+     margin-left: 95%;
+     margin-top:0%;
+     font-size: 40px;
      }
 /*Side navigation bar button size and position*/
      .sidenav a, .dropdown-btn, .LogButton {
@@ -298,12 +319,15 @@ color: white;
        margin-top:32px;
        margin-left:40px;
        color: white;
+       font-size: 25px;
+
      }
      #Recommended{
        position: relative;
        margin-left:42px;
-       margin-top: 400px;
+       margin-top: 480px;
        color: white;
+       font-size: 25px;
      }
      a.logo {
          display:inline-block;
@@ -383,30 +407,19 @@ z-index: 2;
 text-align: center;
 }
 
+
     </style>
     <title>Musify</title>
   </head>
   <body>
-    <!-- <h1 id="Title">Musify</h1> -->
-    <!-- <button type="button" id="LoginButton" onclick="on()" name="LoginButton">Sign in </button> -->
-    <!-- <header>
-      <a class="HeadLogo"><img id="HeadLogo" src="musify.png"></a>
-
-     </header> -->
      <div id="SignUpNav" class="SignUpNav">
-       <a href="#About">My playlist</a>
-       <a href="#Services">Library</a>
-       <a href="#Clients">Settings</a>
-       <a href="#Contact">Contact</a>
+      <button class="LogButton" id= "CloseXBot" onclick="closeBotNav()">&times;</button>
     </div>
 
 
 
      <div id="LoginNav" class="LoginNav">
-       <a href="#About">My playlist</a>
-       <a href="#Services">Library</a>
-       <a href="#Clients">Settings</a>
-       <a href="#Contact">Contact</a>
+      <button class="LogButton" id= "CloseXTop" onclick="closeTopNav()">&times;</button>
        <button type="button" onclick="openBotNav()"class="LogButton">Sign up </button>
     </div>
 
@@ -551,41 +564,28 @@ for (i = 0; i < dropdown.length; i++) {
   });
 }
 
-// *****************************************************
-
-// // Add active class to the current button (highlight it)
-// var header = document.getElementById("myDIV");
-// var btns = header.getElementsByClassName("btn");
-// for (var i = 0; i < btns.length; i++) {
-//   btns[i].addEventListener("click", function() {
-//   var current = document.getElementsByClassName("active");
-//   current[0].className = current[0].className.replace(" active", "");
-//   this.className += " active";
-//   });
-// }
 
 function openBotNav() {
-  document.getElementById("SignUpNav").style.height = "100%";
+  document.getElementById("SignUpNav").style.height = "95%";
   document.getElementById("SignUpNav").style.width = "100%";
-  document.getElementById("TopNav").style.display = "none";
-  document.getElementById("sidenav").style.display = "none";
   document.getElementById("LoginNav").style.display = "none";
+
 }
 
 function closeBotNav() {
-  document.getElementById("LoginNav").style.width = "0";
+  document.getElementById("SignUpNav").style.height = "0%";
 
 }
 
 function openTopNav() {
   document.getElementById("LoginNav").style.height = "100%";
   document.getElementById("LoginNav").style.width = "100%";
-  document.getElementById("TopNav").style.display = "none";
   document.getElementById("sidenav").style.display = "none";
+  document.getElementById("TopNav").style.height = "5%";
 }
 
 function closeTopNav() {
-  document.getElementById("LoginNav").style.width = "0";
+   document.getElementById("LoginNav").style.height = "0%";
 
 }
 
@@ -593,17 +593,34 @@ function closeTopNav() {
 
 
       function openSideNav() {
-        document.getElementById("sidenav").style.width = "250px";
-        document.getElementById("TopNav").style.display = "none";
-      }
+ if (document.getElementById("LoginNav").style.height != "100%") {
+   document.getElementById("SignUpNav").style.height = "0%";
+       document.getElementById("sidenav").style.width = "250px";
+     document.getElementById("TopNav").style.height = "0%";
+ }
+ if (document.getElementById("SignUpNav").style.height = "95%") {
+   document.getElementById("SignUpNav").style.height = "0%";
+   document.getElementById("LoginNav").style.display = "block";
+   document.getElementById("LoginNav").style.height = "0%"
+       document.getElementById("sidenav").style.display = "block";
+     document.getElementById("TopNav").style.height = "0%";
+ }
+
+    else {
+          document.getElementById("sidenav").style.display = "block";
+         document.getElementById("sidenav").style.width = "250px";
+            document.getElementById("TopNav").style.height = "0%";
+            document.getElementById("LoginNav").style.height = "0%"
+
+     }
+}
+
 
       function closeSideNav() {
-        document.getElementById("sidenav").style.width = "0";
-        document.getElementById("TopNav").style.display = "block";
+        document.getElementById("sidenav").style.width = "0%";
+        document.getElementById("TopNav").style.height = "5%";
       }
-      </script>
 
-<script>
   // slideshow 1
   $('#prev0').on('click', function () { //droite
       var last = $('.logo').last().css({opacity: '0', width: '0px'});
