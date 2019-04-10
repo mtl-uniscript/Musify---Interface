@@ -162,6 +162,33 @@ color: white;
        position: absolute;
       }
 
+      .SignUpNav {
+        width: : 100%;
+        height: 0;
+        position: fixed;
+        z-index: 1;
+        bottom: 0;
+        left: 0;
+        background-color: #111;
+        overflow-x: hidden;
+        transition: 0.5s;
+
+      }
+
+
+
+      .LoginNav {
+        width: : 100%;
+        height: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #111;
+        overflow-x: hidden;
+        transition: 0.5s;
+
+      }
 
 
 /*Side navigation bar postion and ratio*/
@@ -214,11 +241,6 @@ color: white;
   padding-left: 8px;
 }
 
-/* Optional: Style the caret down icon */
-.fa-caret-down {
-  float: right;
-  padding-right: 8px;
-}
 
      @media screen and (max-height: 450px) {
        .sidenav {padding-top: 15px;}
@@ -316,20 +338,6 @@ outline: none;
          width: 170px;
          height: 200px;
      }
-     .arrowleft, .arrowright {
-         font-size:30px;
-         cursor:pointer;
-         display:inline-block;
-         padding:20px;
-         background-color:red;
-     }
-     .arrowleft1, .arrowright1 {
-         font-size:30px;
-         cursor:pointer;
-         display:inline-block;
-         padding:20px;
-         background-color:red;
-     }
 
      /* overlay */
      #overlay {
@@ -385,11 +393,28 @@ text-align: center;
       <a class="HeadLogo"><img id="HeadLogo" src="musify.png"></a>
 
      </header> -->
+     <div id="SignUpNav" class="SignUpNav">
+       <a href="#About">My playlist</a>
+       <a href="#Services">Library</a>
+       <a href="#Clients">Settings</a>
+       <a href="#Contact">Contact</a>
+    </div>
+
+
+
+     <div id="LoginNav" class="LoginNav">
+       <a href="#About">My playlist</a>
+       <a href="#Services">Library</a>
+       <a href="#Clients">Settings</a>
+       <a href="#Contact">Contact</a>
+       <button type="button" onclick="openBotNav()"class="LogButton">Sign up </button>
+    </div>
+
 
 
      <div id="sidenav" class="sidenav">
-       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-       <button type="button" onclick="on()"class="LogButton">Sign in </button>
+       <a href="javascript:void(0)" class="closebtn" onclick="closeSideNav()">&times;</a>
+       <button type="button" onclick="openTopNav()"class="LogButton">Sign in </button>
        <button class="dropdown-btn" id="DropdownButton"> Chart <i class="fa fa-caret-down"></i>
        </button>
      <div class="dropdown-container">
@@ -408,7 +433,7 @@ text-align: center;
 
       <ul class="TopNav" id="TopNav">
 
-            <button type="button" id="Home" name="HomeButton"style="cursor:pointer" onclick="openNav()">&#9776; </button>
+            <button type="button" id="Home" name="HomeButton"style="cursor:pointer" onclick="openSideNav()">&#9776; </button>
             <a><img id="HeadLogo" src="musify.png"></a>
             <input type="text" id="SearchBar" placeholder="Search..">
             <button type="button" id="SearchButton" name="SearchButton">Search </button>
@@ -539,14 +564,40 @@ for (i = 0; i < dropdown.length; i++) {
 //   });
 // }
 
+function openBotNav() {
+  document.getElementById("SignUpNav").style.height = "100%";
+  document.getElementById("SignUpNav").style.width = "100%";
+  document.getElementById("TopNav").style.display = "none";
+  document.getElementById("sidenav").style.display = "none";
+  document.getElementById("LoginNav").style.display = "none";
+}
+
+function closeBotNav() {
+  document.getElementById("LoginNav").style.width = "0";
+
+}
+
+function openTopNav() {
+  document.getElementById("LoginNav").style.height = "100%";
+  document.getElementById("LoginNav").style.width = "100%";
+  document.getElementById("TopNav").style.display = "none";
+  document.getElementById("sidenav").style.display = "none";
+}
+
+function closeTopNav() {
+  document.getElementById("LoginNav").style.width = "0";
+
+}
 
 
-      function openNav() {
+
+
+      function openSideNav() {
         document.getElementById("sidenav").style.width = "250px";
         document.getElementById("TopNav").style.display = "none";
       }
 
-      function closeNav() {
+      function closeSideNav() {
         document.getElementById("sidenav").style.width = "0";
         document.getElementById("TopNav").style.display = "block";
       }
