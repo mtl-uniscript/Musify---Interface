@@ -40,14 +40,6 @@ background-color:black
  }
 
 
-
-
-
-
-
-
-
-
 /*ratio of the logo on the header*/
  #HeadLogo{
 height:89px;
@@ -193,6 +185,7 @@ color: white;
         left: 0;
         background-color: #111;
         overflow-x: hidden;
+        overflow-y: hidden;
         transition: 0.5s;
 
       }
@@ -364,7 +357,7 @@ outline: none;
      }
 
      /* overlay */
-     #overlay {
+  #overlay {
   position: fixed;
   display: none;
   width: 100%;
@@ -506,7 +499,7 @@ text-align: center;
 
 <!-- Overlay -->
 
-      <div id="overlay" onclick="off()">
+      <!-- <div id="overlay" onclick="off()">
             </div>
             <div id="shape" class="shape">
             <div class="contenu">
@@ -514,8 +507,10 @@ text-align: center;
 
             <h2 style="color:white">Log in </h2>
             <hr>
-            </div>
-            <!--***************Formulaire **************-->
+            </div> -->
+
+<!--***************Exemple de Formulaire **************-->
+
             <!-- <form class="modal-content" action="/action_page.php">
               <div class="container" style="border-size:border-box">
 
@@ -546,7 +541,7 @@ text-align: center;
                   </div>
       </div>
 
-<!--Script dropdown dans sidenav-->
+<!--Script dropdown list dans sidenav-->
 
 <script>
 var dropdown = document.getElementsByClassName("dropdown-btn");
@@ -564,6 +559,7 @@ for (i = 0; i < dropdown.length; i++) {
   });
 }
 
+// ******************* Fonction pour animation de bar de navigateur *****************//
 
 function openBotNav() {
   document.getElementById("SignUpNav").style.height = "95%";
@@ -612,6 +608,7 @@ function closeTopNav() {
             document.getElementById("TopNav").style.height = "0%";
             document.getElementById("LoginNav").style.height = "0%"
 
+
      }
 }
 
@@ -621,7 +618,7 @@ function closeTopNav() {
         document.getElementById("TopNav").style.height = "5%";
       }
 
-  // slideshow 1
+  // **************** slideshow 1 ********************************
   $('#prev0').on('click', function () { //droite
       var last = $('.logo').last().css({opacity: '0', width: '0px'});
 
@@ -650,14 +647,15 @@ function closeTopNav() {
       });
   });
   //overlay
-  function on() {
-  document.getElementById("overlay").style.display = "block";
-    document.getElementById("shape").style.display = "block";
-}
-function off() {
-  document.getElementById("overlay").style.display = "none";
-    document.getElementById("shape").style.display = "none";
-}
+//   function on() {
+//   document.getElementById("overlay").style.display = "block";
+//     document.getElementById("shape").style.display = "block";
+// }
+// function off() {
+//   document.getElementById("overlay").style.display = "none";
+//     document.getElementById("shape").style.display = "none";
+// }
+
 </script>
   </body>
 </html>
