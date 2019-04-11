@@ -400,21 +400,85 @@ z-index: 2;
 .contenu{
 text-align: center;
 }
+#video1{
+  height: 100%;
 
+  padding-left: 8%;
+position: absolute;
 
+}
+ /* shape du formulaire de creation de comtpe */
+.shape2{
+margin-top:50px;   /* WARNING: le plus que tu augmente le margin le plus que ca expand la page */ 
+margin-bottom: 200px;
+left:35%;
+width:30%;
+height:70%;
+background: rgba(0, 0, 0, 0.5);
+color: white;
+border-radius: 10px;
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+-khtml-border-radius: 10px;
+position: absolute;
+z-index: 2;
+}
     </style>
     <title>Musify</title>
   </head>
   <body>
      <div id="SignUpNav" class="SignUpNav">
+       <div class="conteneur" style="background-Color:black;height:100%">
+
+
       <button class="LogButton" id= "CloseXBot" onclick="closeBotNav()">&times;</button>
+      <video autoplay muted loop id="video1">
+        <source src="video4.mp4" type="video/mp4">
+  </video>
+  <div id="shape2" class="shape2">
+  <div class="contenu">
+  <div class="entete">
+
+  <h2 style="color:white">Inscription</h2>
+  <hr>
+  </div>
+
+
+  <form action="test.html" method="post">
+    <h4 align="center" style="font-size: 18px;color:white;position:relative;margin-top:30px;">Veuillez remplir le formulaire pour creer un compte.</h4>
+
+<div style="margin-Top:7%;font-size:17px;" >
+  <label for="Prenom" style="float:left;margin-left:15%;margin-top:3%;">Prenom:</label>
+  <input style="width:200px;height:30px;float:right;margin-right:20%;margin-top:2%;color:black" class="inputform" id="inputPrenom" type="text" placeholder="Prenom" name="uprenom" required>
+  <input style="width:200px;height:30px;float:right;margin-right:20%;margin-top:3%;color:black" class="inputform" id="inputNom" type="text" placeholder="Nom" name="unom" required>
+  <label for="Nom" style="float:left;margin-left:22%;margin-top:3%;">Nom:</label>
+  <input style="width:200px;height:30px;float:right;margin-right:20%;margin-top:3%;color:black" class="inputform" id="inputUsername" type="text" placeholder="Username" name="uusername" required>
+  <label for="Username" style="float:left;margin-left:10%;margin-top:3%;">Username:</label>
+  <input style="width:200px;height:30px;float:right;margin-right:20%;margin-top:3%;color:black" class="inputform" id="inputCourriel" type="text" placeholder="Courriel" name="ucourriel" required>
+  <label for="Courriel" style="float:left;margin-left:15%;margin-top:3%;">Courriel:</label>
+  <input style="width:200px;height:30px;float:right;margin-right:20%;margin-top:3%;color:black" class="inputform" id="inputPassword" type="text" placeholder="Password" name="upassword" required>
+  <label for="Password" style="float:left;margin-left:11%;margin-top:3%;">Password:</label>
+  <br><button style="color:black;width :100px;height:30px;position:relative;margin-right:140px;margin-top:40px;" id="SignUpbtn"align="center" type="submit" >s'inscrire</button>
+</div>
+
+
+</form>
+
+          </div>
+        </div>
+  </div>
+  <!-- <video autoplay muted loop id="video2">
+    <source src="video2.mp4" type="video/mp4">
+</video> -->
     </div>
 
 
 
      <div id="LoginNav" class="LoginNav">
       <button class="LogButton" id= "CloseXTop" onclick="closeTopNav()">&times;</button>
+
        <button type="button" onclick="openBotNav()"class="LogButton">Sign up </button>
+
     </div>
 
 
