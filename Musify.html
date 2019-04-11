@@ -422,7 +422,7 @@ text-align: center;
 }
 #video1{
   height: 100%;
-
+  left: 0
   padding-left: 8%;
 position: absolute;
 
@@ -434,7 +434,7 @@ margin-top:5%;
 left:34%;
 width:30%;
 height:75%;
-background: rgba(0, 0, 0, 0.5);
+background: rgba(0, 0, 0, 0.75);
 color: white;
 border-radius: 10px;
 -moz-border-radius: 10px;
@@ -448,12 +448,12 @@ z-index: 2;
   </head>
   <body>
      <div id="SignUpNav" class="SignUpNav">
-       <div class="conteneur" style="background-Color:black;height:100%">
+       <div class="conteneur" style="background-color:black;height:100%">
 
 
       <button class="LogButton" id= "CloseXBot" onclick="closeBotNav()">&times;</button>
-      <video autoplay muted loop id="video1">
-        <source src="video4.mp4" type="video/mp4">
+  <video autoplay muted loop id="video1";>
+        <source src="video7.mp4" type="video/mp4">
   </video>
   <div id="shape2" class="shape2">
   <div class="contenu">
@@ -469,16 +469,19 @@ z-index: 2;
 
 <div style="margin-Top:7%;font-size:17px;" >
   <label for="Prenom" style="float:left;margin-left:15%;margin-top:3%;">First Name:</label>
-  <input style="width:200px;height:30px;float:right;margin-right:20%;margin-top:2%;color:black" class="inputform" id="inputPrenom" type="text" placeholder="Prenom" name="uprenom" required>
-  <input style="width:200px;height:30px;float:right;margin-right:20%;margin-top:3%;color:black" class="inputform" id="inputNom" type="text" placeholder="Nom" name="unom" required>
-  <label for="Nom" style="float:left;margin-left:22%;margin-top:3%;">Last Name:</label>
-  <input style="width:200px;height:30px;float:right;margin-right:20%;margin-top:3%;color:black" class="inputform" id="inputUsername" type="text" placeholder="Username" name="uusername" required>
-  <label for="Username" style="float:left;margin-left:10%;margin-top:3%;">Username:</label>
-  <input style="width:200px;height:30px;float:right;margin-right:20%;margin-top:3%;color:black" class="inputform" id="inputCourriel" type="text" placeholder="Courriel" name="ucourriel" required>
+  <input style="border: 2px solid: #A9A9A9 ; border-radius: 5px;width:200px;height:30px;float:right;margin-right:20%;margin-top:2%;color:black" class="inputform" id="inputPrenom" type="text" placeholder="First Name" name="uprenom" required>
+  <input style="border: 2px solid: #A9A9A9 ; border-radius: 5px;width:200px;height:30px;float:right;margin-right:20%;margin-top:3%;color:black" class="inputform" id="inputNom" type="text" placeholder="Last Name" name="unom" required>
+  <label for="Nom" style="float:left;margin-left:15%;margin-top:3%;">Last Name:</label>
+  <input style="border: 2px solid: #A9A9A9 ; border-radius: 5px;width:200px;height:30px;float:right;margin-right:20%;margin-top:3%;color:black" class="inputform" id="inputUsername" type="text" placeholder="Username" name="uusername" required>
+  <label for="Username" style="float:left;margin-left:15%;margin-top:3%;">Username:</label>
+  <input style="border: 2px solid: #A9A9A9 ; border-radius: 5px;width:200px;height:30px;float:right;margin-right:20%;margin-top:3%;color:black" class="inputform" id="inputCourriel" type="text" placeholder="Email" name="ucourriel" required>
   <label for="Courriel" style="float:left;margin-left:15%;margin-top:3%;">Email:</label>
-  <input style="width:200px;height:30px;float:right;margin-right:20%;margin-top:3%;color:black" class="inputform" id="inputPassword" type="text" placeholder="Password" name="upassword" required>
-  <label for="Password" style="float:left;margin-left:11%;margin-top:3%;">Password:</label>
-  <br><button id="SignUpbtn"align="center" type="submit" >Sign Up</button>
+  <input style="border: 2px solid: #A9A9A9 ; border-radius: 5px;width:200px;height:30px;float:right;margin-right:20%;margin-top:3%;color:black" class="inputform" id="inputPassword" type="text" placeholder="Password" name="upassword" required>
+  <label for="Password" style="float:left;margin-left:15%;margin-top:3%;">Password:</label>
+  <br><button id="SignUpbtn"align="center" type="submit" value="submit" >Sign Up</button>
+
+  </form>
+
 </div>
 
 
