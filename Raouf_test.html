@@ -620,7 +620,7 @@ span.psw {
 </video> -->
     </div>
 
-
+<!-- WARNING: quand jessaye de supprimer le login nav le side nav ne fonctionne plus -->
      <div id="LoginNav" class="LoginNav">
       <button class="LogButton" id= "CloseXTop" onclick="closeTopNav()">&times;</button>
 
@@ -723,18 +723,23 @@ span.psw {
           </div>
 
           <div class="container">
+            <div id="attempt" style="display:none">
+              <h3 align="center">you failed to log in 3 times, please wait</h3>
+              <h1 align="center" id="counter"></h1>
+            </div>
+            <div id="credentials">
             <label for="uname"><b>Username</b></label>
-            <input class="inputlogin" type="text" placeholder="Enter Username" name="uname" required>
+            <input class="inputlogin" type="text" placeholder="Enter Username" name="username" required>
 
             <label for="psw"><b>Password</b></label>
             <input class="inputlogin" type="password" placeholder="Enter Password" name="psw" required>
 
-            <button  class="buttonlogin" type="submit">Login</button>
+            <button onclick="compteur()" class="buttonlogin" type="submit">Login</button>
             <label>
               <input type="checkbox" checked="checked" name="remember"> Remember me
             </label>
           </div>
-
+  </div>
           <div class="container" style="background-color:#f1f1f1">
             <button type="button" onclick="document.getElementById('loginoverlay').style.display='none'" class="cancelbtn">Cancel</button>
             <span class="psw" onclick="openBotNav()">No account yet ? </span>
@@ -871,6 +876,34 @@ function closeTopNav() {
 //   document.getElementById("overlay").style.display = "none";
 //     document.getElementById("shape").style.display = "none";
 // }
+// **********************compteur *****************
+var i = 0;
+var timer;
+var count = 10;
+
+//update display
+function compteur(){
+   i++;
+   if(i==3){
+    $("#credentials").hide();
+      $("#attempt").show();
+    update();
+   }
+}
+
+function update(){
+    if (count > 0){
+       $("#counter").text(--count);
+       timer = setTimeout(update, 1000);
+    }
+    else
+    {
+        i=0;
+    count=10;
+    $("#credentials").show();
+      $("#attempt").hide();
+    }
+}
 
 </script>
   </body>
