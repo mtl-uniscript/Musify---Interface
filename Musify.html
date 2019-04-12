@@ -443,6 +443,131 @@ border-radius: 10px;
 position:absolute;
 z-index: 2;
 }
+/******** LOGIN FORM ***********/
+/* Full-width input fields */
+.inputlogin {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+.buttonlogin {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.buttonlogin:hover {
+  opacity: 0.8;
+}
+.cancelbtn:hover {
+  opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+  border: none;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+ cursor: pointer;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)}
+  to {-webkit-transform: scale(1)}
+}
+
+@keyframes animatezoom {
+  from {transform: scale(0)}
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
     </style>
     <title>Musify</title>
   </head>
@@ -496,7 +621,6 @@ z-index: 2;
     </div>
 
 
-
      <div id="LoginNav" class="LoginNav">
       <button class="LogButton" id= "CloseXTop" onclick="closeTopNav()">&times;</button>
 
@@ -508,7 +632,7 @@ z-index: 2;
 
      <div id="sidenav" class="sidenav">
        <a href="javascript:void(0)" class="closebtn" onclick="closeSideNav()">&times;</a>
-       <button type="button" onclick="openTopNav()"class="LogButton">Sign in </button>
+       <button type="button" onclick="document.getElementById('loginoverlay').style.display='block'"class="LogButton">Sign in </button> <!-- WARNING: dans sidenav -->
        <button class="dropdown-btn" id="DropdownButton"> Chart <i class="fa fa-caret-down"></i>
        </button>
      <div class="dropdown-container">
@@ -585,49 +709,41 @@ z-index: 2;
       <span></span>
       </div>
 
-<!-- Overlay -->
-
-      <!-- <div id="overlay" onclick="off()">
-            </div>
-            <div id="shape" class="shape">
-            <div class="contenu">
-            <div class="entete">
-
-            <h2 style="color:white">Log in </h2>
-            <hr>
-            </div> -->
-
-<!--***************Exemple de Formulaire **************-->
-
-            <!-- <form class="modal-content" action="/action_page.php">
-              <div class="container" style="border-size:border-box">
-
-                <p align="center" style="color:white;">Veuillez remplir le formulaire pour creer un compte.</p>
-
-                  <input id="q" type="text" placeholder="Prenom" name="uprenom" required>
-                  <input id="w" type="text" placeholder="Nom" name="unom" required>
-                  <input id="e" type="text" placeholder="Adresse courriel" name="umail" required>
-                  <input id="r" type="password" placeholder="Mot de passe" name="umdp" required>
-                  <p id="dbirth">Date de naissance :</p>
-                  <input id="t" list="jour" name="unaissance" placeholder="jour">
-                  <input id="y" list="mois" name="unaissance" placeholder="mois">
-                  <input id="u" list="annee" name="unaissance" placeholder="annee">
-
-                  <div class="sexe">
-                    <input class="a" type="radio" name="male" value="Male">Homme <br>
-                    <input type="radio" class="b" name="female" value="">Femme <br>
-                    <input type="radio"  class="c" name="other" value="">Autre <br>
-                  </div>
-                <div class="boutt">
-                  <button id="b" align="center" type="submit" class="signupbtn">s'inscrire</button>
-
-                <div>
-                </div>
-              </div>
-            </form> -->
                     </div>
                   </div>
       </div>
+
+<!-- Login Form -->
+      <div id="loginoverlay" class="modal">
+
+        <form class="modal-content animate" action="/action_page.php">
+          <div class="imgcontainer">
+            <span onclick="document.getElementById('loginoverlay').style.display='none'" class="close" title="Close Modal">&times;</span>
+            <img src="musify.png" alt="Avatar" class="avatar">
+          </div>
+
+          <div class="container">
+            <label for="uname"><b>Username</b></label>
+            <input class="inputlogin" type="text" placeholder="Enter Username" name="uname" required>
+
+            <label for="psw"><b>Password</b></label>
+            <input class="inputlogin" type="password" placeholder="Enter Password" name="psw" required>
+
+            <button  class="buttonlogin" type="submit">Login</button>
+            <label>
+              <input type="checkbox" checked="checked" name="remember"> Remember me
+            </label>
+          </div>
+
+          <div class="container" style="background-color:#f1f1f1">
+            <button type="button" onclick="document.getElementById('loginoverlay').style.display='none'" class="cancelbtn">Cancel</button>
+            <span class="psw" onclick="openBotNav()">No account yet ? </span>
+          </div>
+        </form>
+      </div>
+
+
+
 
 <!--Script dropdown list dans sidenav-->
 
@@ -653,7 +769,7 @@ function openBotNav() {
   document.getElementById("SignUpNav").style.height = "95%";
   document.getElementById("SignUpNav").style.width = "100%";
   document.getElementById("LoginNav").style.display = "none";
-
+document.getElementById("loginoverlay").style.display = "none";
 }
 
 function closeBotNav() {
@@ -734,6 +850,18 @@ function closeTopNav() {
           first.appendTo('.slide2').css({opacity: '1', width: '175px'});
       });
   });
+
+// *************** Login In Form ********************
+  // Get the modal
+  var modal = document.getElementById('loginoverlay');
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+      if (event.target == modal) {
+          modal.style.display = "none";
+      }
+  }
+
   //overlay
 //   function on() {
 //   document.getElementById("overlay").style.display = "block";

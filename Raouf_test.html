@@ -71,7 +71,7 @@ z-index: 1;
 #SearchButton:hover {
   background-color: #ccc;
   color: black;
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+ box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 /*ratio and position of SearchButton*/
@@ -218,6 +218,7 @@ color: white;
      margin-left: 95%;
      margin-top:0%;
      font-size: 40px;
+     background-color: black;
      }
 /*Side navigation bar button size and position*/
      .sidenav a, .dropdown-btn, .LogButton {
@@ -230,6 +231,25 @@ color: white;
        transition: 0.3s;
        border: none;
      }
+
+     #SignUpbtn {
+       width :100px;
+       height:30px;
+       position:relative;
+       margin-right:140px;
+       margin-top:40px;
+       border: 1px solid: black;
+       border-radius: 5px;
+       background-color: black;
+       color: white;
+     }
+     #SignUpbtn:hover {
+       background-color: #ccc;
+       color: black;
+      box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+     }
+
+
 
 /*Side navigation bar button action while hover*/
      .sidenav a:hover, .dropdown-btn:hover, .LogButton:hover {
@@ -402,19 +422,19 @@ text-align: center;
 }
 #video1{
   height: 100%;
-
+  left: 0
   padding-left: 8%;
 position: absolute;
 
 }
  /* shape du formulaire de creation de comtpe */
 .shape2{
-margin-top:5%; 
+margin-top:5%;
 
 left:34%;
 width:30%;
 height:75%;
-background: rgba(0, 0, 0, 0.5);
+background: rgba(0, 0, 0, 0.75);
 color: white;
 border-radius: 10px;
 -moz-border-radius: 10px;
@@ -423,42 +443,170 @@ border-radius: 10px;
 position:absolute;
 z-index: 2;
 }
+/******** LOGIN FORM ***********/
+/* Full-width input fields */
+.inputlogin {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+.buttonlogin {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.buttonlogin:hover {
+  opacity: 0.8;
+}
+.cancelbtn:hover {
+  opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+  border: none;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+ cursor: pointer;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)}
+  to {-webkit-transform: scale(1)}
+}
+
+@keyframes animatezoom {
+  from {transform: scale(0)}
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
     </style>
     <title>Musify</title>
   </head>
   <body>
      <div id="SignUpNav" class="SignUpNav">
-       <div class="conteneur" style="background-Color:black;height:100%">
+       <div class="conteneur" style="background-color:black;height:100%">
 
 
       <button class="LogButton" id= "CloseXBot" onclick="closeBotNav()">&times;</button>
-      <video autoplay muted loop id="video1">
-        <source src="video4.mp4" type="video/mp4">
+  <video autoplay muted loop id="video1";>
+        <source src="video7.mp4" type="video/mp4">
   </video>
   <div id="shape2" class="shape2">
   <div class="contenu">
   <div class="entete">
 
-  <h2 style="color:white">Inscription</h2>
+  <h2 style="color:white">Sign Up</h2>
   <hr>
   </div>
 
 
   <form action="test.html" method="post">
-    <h4 align="center" style="font-size: 18px;color:white;position:relative;margin-top:30px;">Veuillez remplir le formulaire pour creer un compte.</h4>
+    <h4 align="center" style="font-size: 18px;color:white;position:relative;margin-top:30px;">Please fill out this form to create your account</h4>
 
 <div style="margin-Top:7%;font-size:17px;" >
-  <label for="Prenom" style="float:left;margin-left:15%;margin-top:3%;">Prenom:</label>
-  <input style="width:200px;height:30px;float:right;margin-right:20%;margin-top:2%;color:black" class="inputform" id="inputPrenom" type="text" placeholder="Prenom" name="uprenom" required>
-  <input style="width:200px;height:30px;float:right;margin-right:20%;margin-top:3%;color:black" class="inputform" id="inputNom" type="text" placeholder="Nom" name="unom" required>
-  <label for="Nom" style="float:left;margin-left:22%;margin-top:3%;">Nom:</label>
-  <input style="width:200px;height:30px;float:right;margin-right:20%;margin-top:3%;color:black" class="inputform" id="inputUsername" type="text" placeholder="Username" name="uusername" required>
-  <label for="Username" style="float:left;margin-left:10%;margin-top:3%;">Username:</label>
-  <input style="width:200px;height:30px;float:right;margin-right:20%;margin-top:3%;color:black" class="inputform" id="inputCourriel" type="text" placeholder="Courriel" name="ucourriel" required>
-  <label for="Courriel" style="float:left;margin-left:15%;margin-top:3%;">Courriel:</label>
-  <input style="width:200px;height:30px;float:right;margin-right:20%;margin-top:3%;color:black" class="inputform" id="inputPassword" type="text" placeholder="Password" name="upassword" required>
-  <label for="Password" style="float:left;margin-left:11%;margin-top:3%;">Password:</label>
-  <br><button style="color:black;width :100px;height:30px;position:relative;margin-right:140px;margin-top:40px;" id="SignUpbtn"align="center" type="submit" >s'inscrire</button>
+  <label for="Prenom" style="float:left;margin-left:15%;margin-top:3%;">First Name:</label>
+  <input style="border: 2px solid: #A9A9A9 ; border-radius: 5px;width:200px;height:30px;float:right;margin-right:20%;margin-top:2%;color:black" class="inputform" id="inputPrenom" type="text" placeholder="First Name" name="uprenom" required>
+  <input style="border: 2px solid: #A9A9A9 ; border-radius: 5px;width:200px;height:30px;float:right;margin-right:20%;margin-top:3%;color:black" class="inputform" id="inputNom" type="text" placeholder="Last Name" name="unom" required>
+  <label for="Nom" style="float:left;margin-left:15%;margin-top:3%;">Last Name:</label>
+  <input style="border: 2px solid: #A9A9A9 ; border-radius: 5px;width:200px;height:30px;float:right;margin-right:20%;margin-top:3%;color:black" class="inputform" id="inputUsername" type="text" placeholder="Username" name="uusername" required>
+  <label for="Username" style="float:left;margin-left:15%;margin-top:3%;">Username:</label>
+  <input style="border: 2px solid: #A9A9A9 ; border-radius: 5px;width:200px;height:30px;float:right;margin-right:20%;margin-top:3%;color:black" class="inputform" id="inputCourriel" type="text" placeholder="Email" name="ucourriel" required>
+  <label for="Courriel" style="float:left;margin-left:15%;margin-top:3%;">Email:</label>
+  <input style="border: 2px solid: #A9A9A9 ; border-radius: 5px;width:200px;height:30px;float:right;margin-right:20%;margin-top:3%;color:black" class="inputform" id="inputPassword" type="text" placeholder="Password" name="upassword" required>
+  <label for="Password" style="float:left;margin-left:15%;margin-top:3%;">Password:</label>
+  <br><button id="SignUpbtn"align="center" type="submit" value="submit" >Sign Up</button>
+
+  </form>
+
 </div>
 
 
@@ -473,7 +621,6 @@ z-index: 2;
     </div>
 
 
-
      <div id="LoginNav" class="LoginNav">
       <button class="LogButton" id= "CloseXTop" onclick="closeTopNav()">&times;</button>
 
@@ -485,7 +632,7 @@ z-index: 2;
 
      <div id="sidenav" class="sidenav">
        <a href="javascript:void(0)" class="closebtn" onclick="closeSideNav()">&times;</a>
-       <button type="button" onclick="openTopNav()"class="LogButton">Sign in </button>
+       <button type="button" onclick="document.getElementById('loginoverlay').style.display='block'"class="LogButton">Sign in </button> <!-- WARNING: dans sidenav -->
        <button class="dropdown-btn" id="DropdownButton"> Chart <i class="fa fa-caret-down"></i>
        </button>
      <div class="dropdown-container">
@@ -562,49 +709,41 @@ z-index: 2;
       <span></span>
       </div>
 
-<!-- Overlay -->
-
-      <!-- <div id="overlay" onclick="off()">
-            </div>
-            <div id="shape" class="shape">
-            <div class="contenu">
-            <div class="entete">
-
-            <h2 style="color:white">Log in </h2>
-            <hr>
-            </div> -->
-
-<!--***************Exemple de Formulaire **************-->
-
-            <!-- <form class="modal-content" action="/action_page.php">
-              <div class="container" style="border-size:border-box">
-
-                <p align="center" style="color:white;">Veuillez remplir le formulaire pour creer un compte.</p>
-
-                  <input id="q" type="text" placeholder="Prenom" name="uprenom" required>
-                  <input id="w" type="text" placeholder="Nom" name="unom" required>
-                  <input id="e" type="text" placeholder="Adresse courriel" name="umail" required>
-                  <input id="r" type="password" placeholder="Mot de passe" name="umdp" required>
-                  <p id="dbirth">Date de naissance :</p>
-                  <input id="t" list="jour" name="unaissance" placeholder="jour">
-                  <input id="y" list="mois" name="unaissance" placeholder="mois">
-                  <input id="u" list="annee" name="unaissance" placeholder="annee">
-
-                  <div class="sexe">
-                    <input class="a" type="radio" name="male" value="Male">Homme <br>
-                    <input type="radio" class="b" name="female" value="">Femme <br>
-                    <input type="radio"  class="c" name="other" value="">Autre <br>
-                  </div>
-                <div class="boutt">
-                  <button id="b" align="center" type="submit" class="signupbtn">s'inscrire</button>
-
-                <div>
-                </div>
-              </div>
-            </form> -->
                     </div>
                   </div>
       </div>
+
+<!-- Login Form -->
+      <div id="loginoverlay" class="modal">
+
+        <form class="modal-content animate" action="/action_page.php">
+          <div class="imgcontainer">
+            <span onclick="document.getElementById('loginoverlay').style.display='none'" class="close" title="Close Modal">&times;</span>
+            <img src="musify.png" alt="Avatar" class="avatar">
+          </div>
+
+          <div class="container">
+            <label for="uname"><b>Username</b></label>
+            <input class="inputlogin" type="text" placeholder="Enter Username" name="uname" required>
+
+            <label for="psw"><b>Password</b></label>
+            <input class="inputlogin" type="password" placeholder="Enter Password" name="psw" required>
+
+            <button  class="buttonlogin" type="submit">Login</button>
+            <label>
+              <input type="checkbox" checked="checked" name="remember"> Remember me
+            </label>
+          </div>
+
+          <div class="container" style="background-color:#f1f1f1">
+            <button type="button" onclick="document.getElementById('loginoverlay').style.display='none'" class="cancelbtn">Cancel</button>
+            <span class="psw" onclick="openBotNav()">No account yet ? </span>
+          </div>
+        </form>
+      </div>
+
+
+
 
 <!--Script dropdown list dans sidenav-->
 
@@ -630,7 +769,7 @@ function openBotNav() {
   document.getElementById("SignUpNav").style.height = "95%";
   document.getElementById("SignUpNav").style.width = "100%";
   document.getElementById("LoginNav").style.display = "none";
-
+document.getElementById("loginoverlay").style.display = "none";
 }
 
 function closeBotNav() {
@@ -711,6 +850,18 @@ function closeTopNav() {
           first.appendTo('.slide2').css({opacity: '1', width: '175px'});
       });
   });
+
+// *************** Login In Form ********************
+  // Get the modal
+  var modal = document.getElementById('loginoverlay');
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+      if (event.target == modal) {
+          modal.style.display = "none";
+      }
+  }
+
   //overlay
 //   function on() {
 //   document.getElementById("overlay").style.display = "block";
